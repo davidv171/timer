@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"github.com/davidv171/timer/timer"
+	"github.com/davidv171/custom/custom"
 )
 
 func main() {
