@@ -1,11 +1,11 @@
-package main
+package custom
 
 import (
 	"fmt"
 	"os/exec"
 )
 
-func runc(custom *string) {
+func Runc(custom *string) {
 
 	if *custom != "" {
 		out, err := exec.Command("/bin/bash", "-c", *custom).Output()

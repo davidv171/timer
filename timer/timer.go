@@ -1,4 +1,4 @@
-package main
+package timer
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func startt(timer *int, lolcat *bool) {
+func Startt(timer *int, lolcat *bool) {
 
 	pipecmd := " | figlet -c -k"
 
