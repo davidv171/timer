@@ -3,19 +3,22 @@ package main
 import (
 	"flag"
 	"github.com/davidv171/timer/custom"
-	"github.com/davidv171/timer/timer"
+	"github.com/davidv171/timer/countdown"
 )
 
 func main() {
 
-	timerf := flag.Int("timer", 180, "Set timer value")
+	countdownptr := flag.Int("timer", -1, "Set timer value")
 	customf := flag.String("custom", "", "Run custom command after it's over")
 	lolcat := flag.Bool("lolcat", false, "Pipe to lolcat?")
+	timerptr := flag.Bool("timer",false,"Perform a timer instead of a countdown")
 
 	flag.Parse()
 
-	timer.Startt(timerf, lolcat)
+	if(*countdownptr == -1) {
 
+	}
+	countdown.Startt(countdownptr, lolcat)
 	custom.Runc(customf)
 
 }

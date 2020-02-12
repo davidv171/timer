@@ -12,7 +12,7 @@ func Runc(custom *string) {
 		if err != nil {
 			fmt.Println("Error running custom command", *custom)
 		}
-		fmt.Println("Custom command output:\n" string(out))
+	fmt.Println("Custom command output:\n" ,string(out))
 
 	}
 }
