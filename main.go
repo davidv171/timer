@@ -2,24 +2,30 @@ package main
 
 import (
 	"flag"
+	"fmt"
 
 	"github.com/davidv171/timer/countdown"
 	"github.com/davidv171/timer/custom"
+	"github.com/davidv171/timer/timer"
 )
 
 func main() {
 
-	countdownptr := flag.Int("timer", -1, "Set timer value")
+	countdownptr := flag.Int("countdown", -1, "Set countdown value")
 	customf := flag.String("custom", "", "Run custom command after it's over")
-	lolcat := flag.Bool("lolcat", false, "Pipe to lolcat?")
 	timerptr := flag.Bool("timer", false, "Perform a timer instead of a countdown")
+	tlimitptr := flag.Int("limit", 0, "Upper limit of the timer")
 
 	flag.Parse()
 
-	if *countdownptr == -1 {
-
+	if *timerptr {
+		fmt.Println("Starting timer...")
+		timer.Start(tlimitptr)
+	} else if *countdownptr != -1 {
+		countdown.Start(countdownptr)
 	}
-	countdown.Countdown(countdownptr, lolcat)
-	custom.Runc(customf)
+	if *customf != "" {
+		custom.Runc(customf)
+	}
 
 }
